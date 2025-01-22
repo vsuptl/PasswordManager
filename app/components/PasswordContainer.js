@@ -1,16 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const PasswordContainer = () => {
+const PasswordContainer = ({ appName, username, password, onPress }) => {
   return (
-      <View style={styles.container}>
+      <TouchableOpacity onPress={onPress} style={styles.container}>
         <View style={styles.card}>
-          <Text style={styles.textTitle}>App Name</Text>
-          <Text style={styles.text}>Username: example_user</Text>
-          <Text style={styles.text}>Password: ********</Text>
+          <Text style={styles.textTitle}>{appName}</Text>
+          <Text style={styles.text}>Username: {username}</Text>
+          <Text style={styles.text}>Password: {password}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
   );
 };
 
